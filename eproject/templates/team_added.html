@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'eproject/signupstatic/css/bootstrap.css' %}">
+</head>
+<body>
+        <div class="alert alert-success container" role="alert" style="margin-top:10px;">
+          <h4 class="alert-heading">Seems Good !</h4>
+          <p>New team member has been added.</p>
+          <hr>
+            <p class="mb-0">Team Leader        :<strong><u>{{ lead_name }}</u></strong></p>
+            <p class="mb-0">First Name         :<strong><u>{{ first_name }}</u></strong> </p>
+            <p class="mb-0">Last Name          :<strong><u>{{ last_name }}</u></strong> </p>
+            <p class="mb-0">Ennrollment Number :<strong><u>{{ enroll_no }}</u></strong> </p>
+            <p class="mb-0">Contact Number     :<strong><u>{{ contact_no }}</u></strong> </p>
+            <p class="mb-0">Role               :<strong><u>{{ role }}</u></strong> </p>
+            <p class="mb-0"><a href="javascript:history.back()">Go Back</a></p>
+        </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Student Login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		{% load static %}
+		<!-- LINEARICONS -->
+		<link rel="stylesheet" href="{% static 'eproject/loginstatic/fonts/linearicons/style.css' %}">
+		<link rel="stylesheet" href="{% static 'eproject/signupstatic/css/bootstrap.css' %}">
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'eproject/loginstatic/css/style.css' %}">
+	</head>
+
+	<body>
+
+
+
+		<div class="wrapper">
+
+			<div class="inner">
+				{% for message in messages %}
+                <div class="alert alert-{{ message.tags }} container mg-2" style="margin-top:20px;" align="center" role="alert">
+                    {{ message }}
+                </div>
+        	    {% endfor %}
+				<img src="{% static 'eproject/loginstatic/images/bhaiya.png' %}" alt="" class="image-1">
+				<form method="POST" action="/eproject/studlogin">
+					<h3>Student Login</h3>
+					<div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="text" class="form-control" placeholder="Enrollment" name="enroll">
+					</div>
+					
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" placeholder="Password" name="pass1">
+					</div>
+					   {% csrf_token %}
+					<input type="submit" class="btn-success sucess container">
+					 <div class="form-group">
+                               <br>
+                               <a href="#" class="term-service">Forgot Password</a>
+						  <a href="/eproject/studentsignup" class="term-service" style="float:right;">Signup</a>
+                            </div>
+				</form>
+				<img src="images/image-2.png" alt="" class="image-2">
+			</div>
+			
+		</div>
+		
+		<script src="{% static 'eproject/loginstatic/js/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static 'eproject/loginstatic/js/main.js' %}"></script>
+	</body>
+</html>

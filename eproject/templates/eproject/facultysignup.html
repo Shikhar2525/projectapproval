@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static  %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Faculty SignUp</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="{% static 'eproject/signupstatic/fonts/material-icon/css/material-design-iconic-font.min.css' %}">
+	<link rel="stylesheet" href="{% static 'eproject/signupstatic/css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'eproject/signupstatic/js/javas.js' %}">
+	<link rel="stylesheet" href="{% static 'eproject/signupstatic/js/bootstrap.js' %}">
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'eproject/signupstatic/css/style.css' %}">
+</head>
+<body>
+<div class="main">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light container" style="widt;margin-top:15px;margin-bottom:15px;"><a class="navbar-brand" href="#"><strong>Home</strong></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link dropbtn dropdown" href="#" style="color:white;width:100px;text-align: center;">About<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dropbtn dropdown" href="#" style="color:white;width:120px;text-align: center;">What's New</a>
+      </li>
+      <li>
+			   <div class="dropdown">
+				  <button class="dropbtn" style="color:white;width:100px;text-align: center;">Student</button>
+				  <div class="dropdown-content">
+					<a href="/eproject/studentlogin">Login</a>
+					  <a href="/eproject/studentsignup">Register</a>
+				  </div>
+				</div>
+      </li>
+		<li>
+			   <div class="dropdown">
+				  <button class="dropbtn" style="color:white;width:100px;text-align: center;">Faculty</button>
+				  <div class="dropdown-content">
+					<a href="/eproject/facultylogin">Login</a>
+					  <a href="/eproject/facultysignup">Register</a>
+				  </div>
+				</div>
+      </li>
+     
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+    <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <div class="signup-form">
+                      <p class="form-title" style="font-size: 27px;color: black;"><strong>Project Incharge Signup</strong></p>
+                      <form method="POST" class="register-form" id="register-form">
+                            <div class="form-group">
+                                <label for="name"><i class="zmdi zmdi-account-add"></i></label>
+                                <input type="text" name="name" id="name" placeholder="Enrollment  Number"/>
+							
+                        </div>
+					    <div class="form-group">
+							  <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+						  <input type="text" name="name" id="name" placeholder="First Name"/>
+					    </div>
+						  <div class="form-group">
+							  <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+						  <input type="text" name="name" id="name" placeholder="Last Name"/>
+						  </div>
+						  <div class="form-group">
+							  <label for="name"><i class="zmdi zmdi-phone"></i></label>
+						  <input type="number" name="name" id="name" placeholder="Contact Number"/>
+						  </div>
+                            <div class="form-group">
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email"/>
+                            </div>
+                        <div class="form-group">
+                                <label for="pass"><i class="zmdi zmdi-lock"></i></label>
+                                <input type="password" name="pass" id="pass" placeholder="Password"/>
+                        </div>
+                            <div class="form-group">
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
+                            </div>
+                            <div class="form-group">
+                                <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
+                            </div>
+						  <div class="form-group">
+                               
+                                <label for="agree-term" class="label-agree-term"><span><span></span></span> <a href="#" class="term-service">Forgot Password</a></label>
+                        </div>
+                            <div class="form-group form-button">
+                                <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
+                            </div>
+                      </form>
+                  </div>
+                    <div class="signup-image">
+                        <figure><img src="{% static 'eproject/signupstatic/images/signin-image.jpg' %}" alt="sing up image"></figure>
+                        <a href="/eproject/facultylogin" class="signup-image-link">I am already member</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sing in  Form -->
+        <section class="sign-in">
+            <div class="container"> </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    <script src="{% static 'eproject/signupstatic/vendor/jquery/jquery.min.js' %}"></script>
+    <script src="{% static 'eproject/signupstatic/js/main.js' %}"></script>
+</body>
+</html>

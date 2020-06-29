@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     {% load static %}
+    <link rel="stylesheet" href="{% static 'eproject/signupstatic/css/bootstrap.css' %}">
+
+    <title>Thank you {{ name }}</title>
+
+</head>
+<body>
+        <div class="alert alert-success container" role="alert" style="margin-top:10px;">
+          <h4 class="alert-heading">Thank you {{ name }}!</h4>
+            <p>Your project <b>{{ title }}</b> has been successfully submitted .</p>
+            <p>Please wait, until your alloted incharge review it.</p>
+          <hr>
+
+            <p class="mb-0">You will recive an email after confirmation , Click <a onclick="goBack()"><u>here</u></a> to go back</p>
+
+        </div>
+        <div class="alert alert-warning container" role="alert">
+            Refresh your profile to see the effect.
+    </div>
+
+<script>
+function goBack() {
+  window.history.go(-2);
+}
+</script>
+</body>
+</html>

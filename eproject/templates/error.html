@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'eproject/signupstatic/css/bootstrap.css' %}">
+</head>
+<body>
+    {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} container mg-2" style="margin-top:20px;" align="center" role="alert">
+                    {{ message }} please go <a href="javascript:history.back()">back</a>
+                </div>
+    {% endfor %}
+</body>
+</html>

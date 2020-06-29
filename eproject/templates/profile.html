@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+	<title>Student Profile</title>
+	<head>
+        {% load static %}
+		<link rel="stylesheet" href="{% static 'eproject/profilestatic/css/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'eproject/profilestatic/css/style.css' %}">
+		<link rel="stylesheet" href="js/javas.js">
+        <link rel="stylesheet" href="{% static 'eproject/profilestatic/css/w3.css' %}">
+		<link rel="stylesheet" href="{% static 'eproject/profilestatic/js/bootstraps.js' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <style>
+             .upload-btn-wrapper {
+              position: relative;
+              overflow: hidden;
+              display: inline-block;
+              margin-left:13px;
+              margin-top:2px;
+            }
+
+            .btn5 {
+              border: 1px solid gray;
+              color: gray;
+              width:100px;
+              height:30px;
+              background-color: white;
+              padding: 8px 20px;
+              border-radius: 8px;
+              font-size: 10px;
+              font-weight: bold;
+            }
+
+            .upload-btn-wrapper input[type=file] {
+              font-size: 25px;
+              position: absolute;
+              left: 0;
+              top: 0;
+              opacity: 0;
+            }
+        </style>
+	</head>
+    <body>
+
+
+
+
+		<nav class="navbar navbar-expand-lg navbar-light bg-light container"  style="widt;margin-top:15px;margin-bottom:15px;"><a class="navbar-brand" href="#"><strong>Home</strong></a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedConten">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link dropbtn dropdown" href="#" style="color:white;width:100px;text-align: center;">About<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link dropbtn dropdown" href="#" style="color:white;width:120px;text-align: center;">What's New</a>
+      </li>
+
+
+
+
+     
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+		
+<div class="container target">
+    <div class="row">
+        <div class="col-sm-10">
+			<h1>Welcome {{ user.first_name }} ! </h1></center><br>
+
+            {% if project %}
+             <form method="post" action="/eproject/view_project" style="display:inline;">
+                 <input type="text" value="{{ user.username }}"  name="username" hidden>
+
+                 {% csrf_token %}
+                <input type="submit" class="btn btn-primary" value="View Project">
+            </form>
+
+            {% else %}
+                <form method="post" action="/eproject/upload" style="display:inline;">
+                <input type="text" value="{{ user.username }}" name="secret_key" hidden>
+                {% csrf_token %}
+                <input type="submit" class="btn btn-success" value="Upload">
+            </form>
+
+            {% endif %}
+
+			<button type="button" class="btn btn-info"> Approval Status</button>
+            <!--add members modal-->
+            <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Add team Members</button>
+            <!--add members modal-->
+
+
+
+
+
+
+
+            <a href='/eproject/studlogout'>  <button class="w3-button w3-red">Logout</button></a>
+<br>
+        </div>
+		
+		
+      <div class="col-sm-2"><a  class="pull-right"><img title="profile image" class="img-circle img-responsive profile1" src="/media/{{ user.userprofile.image }}" style="width:130px;height:130px;border-radius:50%;"></a>
+            <!--Change Profile !-->
+<!--            <form method="post" action="/eproject/changepp" enctype="multipart/form-data">-->
+<!--           ​<div class="upload-btn-wrapper">-->
+<!--              <button class="btn5">Change</button>-->
+<!--              <input type="file" name="newpp" />-->
+<!--              <input type="text" value="{{ user.username }}" name="username" hidden>-->
+<!--                {% csrf_token %}-->
+<!--                <input type="submit">-->
+<!--            </div>-->
+<!--            </form>-->
+        </div>
+
+    </div>
+	<hr class="container" style="width: auto">
+    {% for message in messages %}
+                <div class="alert alert-{{ message.tags }} container mg-2" style="margin-top:20px;" align="center" role="alert">
+                    {{ message }}
+                </div>
+    {% endfor %}
+	<div class="container-fluid">
+	<div class="row">
+<!--
+	<div class="alert alert-danger alert-dismissible container" role="alert" style="height: 40px">
+  <button type="button" onclick="this.parentNode.parentNode.removeChild(this.parentNode);" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+</div>
+-->
+		<div class="table">
+			<table class="table">
+				<thead class="thead-light" >
+					<tr>
+						<td colspan="6" style="text-align: center;font-size: 20px;border: 1px solid;"  >
+							 Team Members
+						</td>
+					</tr>
+				</thead>
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Enrollment</th>
+      <th scope="col">Role</th>
+		<th scope="col">Email</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for t1 in t %}
+  <tr>
+      <td>{{ t1.first_name }} {{ t1.last_name }}</td>
+      <td>{{ t1.enroll_no }}</td>
+      <td>{{ t1.role }}</td>
+		<td>{{ t1.email }}</td>
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+
+		</div>
+	</div>
+<!--view project-->
+        {% if project is not None %}
+        <div class="card text-center" style="border:1px solid;">
+          <div class="card-header" >
+            Your Project
+          </div>
+          <div class="card-body">
+              <img src="{% static 'eproject/win.png' %}" style="height:100px;width:100px;">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <p class="card-text" style="overflow: hidden;margin-left:50px;margin-right:50px">{{ project.desc }}</p>
+            <form method="post" action="/eproject/view_project" style="display:inline;">
+                <input type="text" value="{{ user.username }}"  name="username" hidden>
+                {% csrf_token %}
+                <input type="submit" class="btn btn-primary" value="View Project">
+            </form>
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+              Delete
+            </button>
+
+          </div>
+          <div class="card-footer text-muted">
+            {{ project.upload_date }}
+          </div>
+        </div>
+        {% else %}
+            <div class="card text-center" style="border:1px solid;">
+              <div class="card-header" >
+                Not exist
+              </div>
+                <p class="card-text" style="overflow: hidden;margin:50px">Sorry you have not uploaded project yet.</p>
+              <div class="card-footer text-muted">
+                  <a href="#">Upload now</a>
+              </div>
+        </div>
+        {% endif %}
+        <br>
+        <br><br><br><br><br><br><br>
+<!--        view project-->
+
+
+<!--		<div class="container">-->
+<!--		<ul class="progressbar">-->
+<!--			<li class="active">Registered</li>-->
+<!--			<li class="active">Submitted</li>-->
+<!--			<li class="active">Aprroved</li>-->
+<!--		</ul>-->
+<!--	</div>-->
+<!--</div>-->
+		
+<!--modal to add new team members-->
+<div id="id01" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4">
+      <header class="w3-container w3-teal">
+        <span onclick="document.getElementById('id01').style.display='none'"
+        class="w3-button w3-large w3-display-topright">&times;</span>
+        <h2>Add New Team Member (Maximum 2)</h2>
+      </header>
+      <div class="w3-container">
+          <div class="form_member container-fluid" style="margin-top:10px;width:500px;float:left;">
+              <form method="post" action="/eproject/addteam">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">First Name</label>
+                    <input type="text" class="form-control"  name="first_name" placeholder="Enter first name">
+                </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Last Name</label>
+                    <input type="text" class="form-control" name="last_name" placeholder="Enter last name">
+                </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Enrollment Number</label>
+                    <input type="text" class="form-control" name="enroll" placeholder="Enter enrollment number">
+                </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Contact Number</label>
+                    <input type="number" class="form-control" name="contact" placeholder="Contact Number">
+                </div>
+
+                  <div class="form-group">
+                      <label for="sel1">Role</label>
+                      <select class="form-control" name="role">
+                        <option>Front-end Developer</option>
+                        <option>Back-end Developer</option>
+                        <option>Designer</option>
+                        <option>Database Handler</option>
+                      </select>
+                      <input type="hidden" name="lead_name" value="{{ user.username }}">
+                      {% csrf_token %}
+                      <button type="submit" class="w3-button w3-block w3-teal" style="margin-top:10px;">Add</button>
+                    </div>
+
+
+            </form>
+          </div>
+          <div style="float:right;">
+              <img src="{% static 'eproject/profilestatic/team.png' %}" style="height:300px;width:auto;margin:30px">
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--    Logout modal-->
+
+<script>
+$(document).ready(function(){
+  $('.toast').toast('show');
+});
+</script>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Are you sure !</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <b> Delete</b> {{ project.title }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <form method="post" action="/eproject/delete_project" style="display:inline;">
+            <input type="text" value="{{ user.username }}"  name="username" hidden>
+            {% csrf_token %}
+            <input type="submit" class="btn btn-danger" value="Delete">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+  <title>Project Name</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px;}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;}
+    }
+
+  </style>
+</head>
+<body >
+
+<div class="container" style="box-shadow: 0 30px 40px rgba(0,0,0,.1);margin-top:50px;margin-bottom:50px;width:900px;float:middle;x">
+  <div class="row content container-fluid" onload="window.location.reload()">
+    <div class="col-sm-9" style="border: thin #868080;float:middle;margin-top:40px;" >
+        <div class="container" style="margin-left:-80px;margin-bottom:20px;" >
+			<a href="javascript:history.back()"><button type="button" class="btn btn-secondary" style="margin-left:70px;width:200px;">Go Back</button></a>
+		</div>
+        <div align="center" style="margin-left:270px;">
+        <img title="profile image" class="img-circle img-responsive profile1" src="/media/{{ user.userprofile.image }}" style="width:130px;height:130px;border-radius:50%;">
+        </div>
+        <div style="margin-left:270px;" align="center">
+            <h3>{{ user.first_name}} {{ user.last_name }}</h3>
+        </div>
+        <h4>Team</h4>
+        {% if t%}
+        {% for t1 in t %}
+         <span class="badge badge-secondary" style="margin-top:5px;">{{ t1.first_name }} {{ t1.last_name }}</span><br>
+        {% endfor %}
+        {% else %}
+            <span class="badge badge-secondary">No team member</span>
+        {% endif %}
+
+
+
+
+
+
+      <hr>
+      <h3>{{ project.title }} <img src="{% static 'eproject/win.png' %}" height="60px" width="60px"></h3>
+      <h5><span class="glyphicon glyphicon-time"></span> Submitted by {{ user.first_name }}, {{ project.upload_date }}.</h5>
+      <h5><span class="label label-success">Student</span></h5><hr style="border-width:2;">
+      <br>
+		<h4>Description</h4>
+        <div>
+        <p style="word-wrap: break-word;">{{ project.desc }}</p>
+        </div>
+      <hr>
+		
+		<h4>Technologies Used</h4>
+		<p>C++, Java</p>
+		<hr>
+		
+		<h4>Download files</h4>
+        <a href="{{ project.project_file.url }}" download><button class="btn btn-primary">Download</button></a>
+		<hr>
+		
+		<h4>Project Report</h4>
+		<div class="embed-responsive embed-responsive-16by9"">
+		  <iframe class="embed-responsive-item" src="{{ project.p_report.url }}"  allowfullscreen></iframe>
+		</div>
+		<hr>
+		
+		<h4>Video Implementation</h4>
+     		<div class="embed-responsive embed-responsive-16by9">
+		  <iframe class="embed-responsive-item" src="{{ project.v_link }}" allowfullscreen></iframe>
+		</div>
+		<hr>
+		
+		
+		
+      <h4>Leave a Comment:</h4>
+      <form  method="POST" action="/eproject/add_comment">
+          <input type="text" name="username" value="{{ user.username }}" hidden>
+        <div class="form-group">
+          <textarea class="form-control" rows="3" name="content" required></textarea>
+        </div>
+          {% csrf_token %}
+        <input type="submit" class="btn btn-success" >
+      </form>
+      <br><br>
+        <div class="well well-small" style="height:15px;">
+         <p style="margin-top:-7px;color:red;"> Reload Page if comments are not showing</p>
+        </div>
+      <p><span class="badge">{{ count }}</span> Comments:</p><br>
+      {% for i in comment %}
+      {% if user %}
+      <div class="row">
+
+        <div class="col-sm-2 text-center">
+          <img src="/media/{{ user.userprofile.image }}" class="img-circle" height="65" width="65" alt="Avatar">
+        </div>
+        <div class="col-sm-10">
+          <h4> {{ user.first_name }} <small>{{i.date}} {{i.time}}</small></h4>
+          <p>{{ i.content }}</p>
+          <br>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+  </div>
+</div>
+
+<!--
+<footer class="container-fluid">
+  <p>Footer Text</p>
+</footer>
+-->
+
+</body>
+</html>

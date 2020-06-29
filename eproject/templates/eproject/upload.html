@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Project Upload</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		{% load static %}
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="{% static 'eproject/uploadstatic/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css' %}">
+		
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="{% static 'eproject/signupstatic/css/bootstrap.css' %}">
+		<link rel="stylesheet" href="{% static 'eproject/uploadstatic/css/style.css' %}">
+	</head>
+	<style>
+::placeholder { /* Firefox, Chrome, Opera */
+    color: blue;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: red;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: orange;
+}
+</style>
+<body>
+		<div class="container-fluid">
+			<a href="javascript:history.back()"><button type="button" class="btn btn-secondary" style="margin-left:70px;width:300px;z-index:5;">Go Back</button></a>
+		</div>
+
+		<div class="wrapper" style="margin:20px" >
+			<div class="image-holder container" style="margin-top: -60px;opacity:0.8;">
+				<img src="images/image1.jpg" alt="" style="opacity:0.1;" >
+			</div>
+			<div class="form-inner container"  style="background:#01989d;opacity:1;border:thick solid;">
+				<form action="/eproject/handleproject" method="post" enctype="multipart/form-data">
+					<div class="form-header">
+						<h3>Upload Project Details</h3>
+						<img src="images/sign-up.png" alt="" class="sign-up-icon">
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-tag"></span>
+					  <input type="text" class="form-control" placeholder="Project Title" name="ptitle" required>
+					</div>
+			<br>							
+				  <div class="form-holder">
+					  <span class="lnr lnr-list"></span>
+					  <textarea required class="form-control" name="desc" placeholder="Project Description(min 100 words)" id="exampleFormControlTextarea1" maxlength="400" rows="10" style="height:190px" ></textarea>
+					</div>
+					<br>
+					<div class="form-holder">
+						<span class="lnr lnr-menu-circle"></span>
+						<input type="text" required class="form-control" placeholder="Technologies Used (,)" name="techused">
+					</div>
+					<div class="form-holder" style="margin-top:10px;">
+						<span class="lnr lnr-tag"></span>
+					  <input type="text" required class="form-control" placeholder="Video Link (If available on Youtube") name="vlink">
+					</div>
+					<br>
+
+					<div class="custom-file">
+    <input type="file"   class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="projectfile" accept=".zip,.rar,.7zip">
+    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+  </div>            <p style="float:right;">Project Files &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.zip' , '.rar' , '.7zip' </p>
+
+
+                    <div class="custom-file">
+
+    <input type="file"  class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="preport" accept=".pdf">
+    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+  </div><p style="float:right;">Project Report &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.pdf' </p>
+					<input type="text" value="{{ secret_key }}" name="secret_key" hidden>
+					{% csrf_token %}
+					<button type="submit" style="margin-bottom:20px;">Upload</button>
+					
+				</form>
+			</div>
+			
+		</div>
+		
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/jquery.form-validator.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

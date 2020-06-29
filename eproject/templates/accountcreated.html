@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'eproject/signupstatic/css/bootstrap.css' %}">
+</head>
+<body>
+        <div class="alert alert-success container" role="alert" style="margin-top:10px;">
+          <h4 class="alert-heading">Well done!</h4>
+          <p>Your account has been successfully created for Online Project Approval System .</p>
+          <hr>
+            <p class="mb-0">Email has been sent to <strong><u>{{ email }}</u></strong> , with login credentials </p>
+            <p class="mb-0"><a href="/eproject/studentlogin">Login here</a></p>
+        </div>
+</body>
+</html>
