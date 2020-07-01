@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% load static  %}
+     <link rel="shortcut icon" type="image/x-icon" href="{% static 'eproject/homestatic/images/favicon.ico' %}">
+    <meta charset="UTF-8">
+    <title>Select Category</title>
+
+    <link rel="stylesheet" href="{% static 'eproject/signupstatic/js/bootstrap.js' %}">
+    <link rel="stylesheet" href="{% static 'eproject/signupstatic/css/bootstrap.css' %}">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+     <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px;}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;}
+    }
+    div.c4 {
+    height: 10em;
+    position: relative }
+div.c4 button {
+    margin: 0;
+    margin-top:250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) }
+    div.c4 p{
+        margin: 0;
+        margin-top:150px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%)
+    }
+
+  </style>
+</head>
+<body>
+    <div class="container" style="height: 100vh;margin-top:2%;margin-bottom:2%;" >
+            <div class="c4">
+                <p style="font-family:tahoma;font-size:70px;">Select your Category</p>
+                <a href="/eproject/studentsignup"><button type="button" class="btn btn-outline-dark" style="margin-left:-90px;width:230px;height:60px;">Student</button></a>
+                <a href="/eproject/facultysignup"><button type="button" class="btn btn-outline-dark" style="margin-left:110px;width:230px;height:60px;">Faculty</button></a>
+
+            </div>
+    </div>
+
+
+</body>
+</html>

@@ -13,6 +13,8 @@ from django.core.files.storage import FileSystemStorage
 def error(request):
     return render(request, 'error.html')
 
+def select_cat(request):
+    return render(request, 'select_cat.html')
 
 
 def studentlogin(request):

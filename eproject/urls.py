@@ -16,6 +16,8 @@ urlpatterns = [
    path("error", views.error, name="error"),
    path("add_comment", views.add_comment, name="add_comment"),
    path("delete_project", views.delete_project, name="delete_project"),
+   path("select_cat", views.select_cat, name="select_cat"),
+
 
   # path("member_added", views.member_added, name="member_added"),
 ]
