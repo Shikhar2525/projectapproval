@@ -13,8 +13,6 @@ from django.core.files.storage import FileSystemStorage
 def error(request):
     return render(request, 'error.html')
 
-def index(request):
-    return render(request, 'profile.html')
 
 
 def studentlogin(request):

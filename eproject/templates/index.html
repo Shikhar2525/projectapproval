@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% load static %}
+    <title></title>
+	  <link rel="shortcut icon" type="image/x-icon" href="{% static 'eproject/homestatic/images/favicon.ico' %}">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'eproject/homestatic/fonts/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'eproject/homestatic/css/bootstrap.min.css' %}" >
+    <link rel="stylesheet" href="{% static 'eproject/homestatic/css/jquery-ui.css' %}">
+    <link rel="stylesheet" href="{% static 'eproject/homestatic/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'eproject/homestatic/css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'eproject/homestatic/css/owl.theme.default.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'eproject/homestatic/css/jquery.fancybox.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'eproject/homestatic/css/bootstrap-datepicker.css' %}">
+
+    <link rel="stylesheet" href="{% static 'eproject/homestatic/fonts/flaticon/font/flaticon.css' %}">
+
+    <link rel="stylesheet" href="{% static 'eproject/homestatic/css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'eproject/homestatic/css/style.css' %}">
+    
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+  
+
+  <div id="overlayer"></div>
+  <div class="loader">
+    <div class="spinner-border text-primary" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>
+
+  <div class="site-wrap"  id="home-section">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+   
+   
+    <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
+
+      <div class="container">
+        <div class="row align-items-center">
+          
+          <div class="col-6 col-md-3 col-xl-4  d-block">
+            <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">projects<span class="text-primary">.</span> </a></h1>
+          </div>
+
+          <div class="col-12 col-md-9 col-xl-8 main-menu">
+            <nav class="site-navigation position-relative text-right" role="navigation">
+
+              <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block ml-0 pl-0">
+                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li><a href="#features-section" class="nav-link">Features</a></li>
+                <li class="has-children">
+                  <a href="#about-section" class="nav-link">About Us</a>
+                  <ul class="dropdown arrow-top">
+                    <li><a href="#our-team-section" class="nav-link">Our Team</a></li>
+                   
+                    </li>
+                  </ul>
+                </li>
+                
+            
+                <li><a href="#contact-section" class="nav-link">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+
+
+          <div class="col-6 col-md-9 d-inline-block d-lg-none ml-md-0" ><a href="#" class="site-menu-toggle js-menu-toggle text-black float-right"><span class="icon-menu h3"></span></a></div>
+
+        </div>
+      </div>
+      
+    </header>
+    
+
+    <div class="site-blocks-cover" style="overflow: hidden;">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+
+          <div class="col-md-12" style="position: relative;" data-aos="fade-up" data-aos-delay="200">
+            
+            <img src="{% static 'eproject/homestatic/images/undraw_investing_7u74.svg' %}" alt="Image" class="img-fluid img-absolute">
+
+            <div class="row mb-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="col-lg-6 mr-auto">
+                <h1>Welcome to projects</h1>
+                <p class="mb-5">Upload | View | Get Approved</p>
+                <div>
+                  <a href="/eproject/studentlogin" class="btn btn-primary mr-2 mb-2">Go to WebApp</a>
+                </div>
+              </div>
+              
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>  
+
+
+    <div class="site-section" id="features-section">
+      <div class="container">
+        <div class="row mb-5 justify-content-center text-center"  data-aos="fade-up">
+          <div class="col-7 text-center  mb-5">
+            <h2 class="section-title">projects Features</h2>
+          </div>
+        </div>
+        <div class="row align-items-stretch">
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
+            
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-autorenew"></span></span>
+              </div>
+              <div>
+                <h3>Free Storage</h3>
+                <p>Providing free storage for storing project files and other documentation in a single go</p>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
+
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-store_mall_directory"></span></span>
+              </div>
+              <div>
+                <h3>Self Analysis</h3>
+                <p>Helps in analyzing yourself , and getting feedbacks</p>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up"  data-aos-delay="200">
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-shopping_basket"></span></span>
+              </div>
+              <div>
+                <h3>Easy to manage</h3>
+                <p>Manage eveything in project. Manage team members and their duties</p>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
+            <div class="unit-4 d-block">
+              <div class="unit-4-icon mb-3">
+                <span class="icon-wrap"><span class="text-primary icon-settings_backup_restore"></span></span>
+              </div>
+              <div>
+                <h3>Multi User</h3>
+                <p>Can be run and managed by multiple users </p>
+                <p>&nbsp;</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="feature-big">
+      <div class="container">
+<div class="mt-5 row mb-5 site-section ">
+        <div class="col-lg-7 order-1 order-lg-2" data-aos="fade-left">
+            <img src="{% static 'eproject/homestatic/images/undraw_metrics_gtu7.svg' %}" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-5 pr-lg-5 mr-auto mt-5 order-2 order-lg-1">
+            <h2 class="text-black">Communicate and gather feedback            </h2>
+            <div class="author-box" data-aos="fade-right">
+              <div class="d-flex mb-4">
+                <div class="mr-3">
+                  <img src="{% static 'eproject/homestatic/images/manojd.jpg' %}" alt="Image" class="img-fluid rounded-circle">
+                </div>
+                <div class="mr-auto text-black"><strong>Manoj Dhawan</strong><br>
+                  Professor , SVVV</div>
+              </div>
+              <blockquote>&ldquo;Whole process of project submission and approval is now more easier&rdquo;</blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="site-section bg-light" id="about-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title mb-3">About Us</h2>
+          </div>
+        </div>
+        <div class="row mb-5">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src="{% static 'eproject/homestatic/images/undraw_bookmarks_r6up.svg' %}" alt="Image" class="img-fluid">
+          </div>
+          <div class="col-lg-5 ml-auto pl-lg-5">
+            <h2 class="text-black mb-4 h3 font-weight-bold">Our Mission</h2>
+            <p class="mb-4">We provide a platform for uploading , sharing and analyzing your project with minimum efforts. We belive in quality over quantity , this application is very useful in educational and professional purposes.</p>
+            <ul class="ul-check mb-5 list-unstyled success">
+              <li>Reliability</li>
+              <li>Accessibility</li>
+              <li>Easier Managment</li>
+            </ul>
+            <p><a href="#" class="btn btn-primary">Learn More</a></p>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+
+    <div class="site-section" id="our-team-section">
+      <div class="container">
+        <div class="row mb-5 justify-content-center text-center"  data-aos="fade-up">
+          <div class="col-7 text-center  mb-5">
+            <h2 class="section-title">Our Team</h2>
+          </div>
+        </div>
+       
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100" style="margin-left: auto;margin-right:auto;">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img src="{% static 'eproject/homestatic/images/shikhar.jpg' %}" alt="Image" class="img-fluid">
+                </figure>
+				  <div class="social"><font color="white">Shikhar Mandloi</font></div>
+              </div>
+              <h2 class="text-black h1">Shikhar Mandloi</h2>
+              <span class="sub-title d-block mb-3">Lead | Back-end</span>
+              
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="200" style="margin-left: auto;margin-right:auto;">
+            <div class="person">
+              <div class="bio-img">
+                <figure>
+                  <img src="{% static 'eproject/homestatic/images/person_2.jpg' %}" alt="Image" class="img-fluid">
+                </figure>
+				  <div class="social"><font color="white">Richa Gupta</font></div>
+              </div>
+              <h2 class="text-black h1">Richa Gupta</h2>
+              <span class="sub-title d-block mb-3">UI/UX | Fron-end</span>
+              
+              
+            </div>
+          </div>
+</div>
+      </div>
+    </div>
+<div class="site-section" id="blog-section"> </div>
+
+    <div class="site-section bg-image2 overlay" id="contact-section" style="background-image: url('images/hero_1.jpg');">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-12 text-center">
+            <h2 class="section-title mb-3 text-white">Contact Us</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-7 mb-5">
+
+            
+
+            <form action="#" class="p-5 bg-white">
+              
+              <h2 class="h4 text-black mb-5">Contact Form</h2> 
+
+              <div class="row form-group">
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label class="text-black" for="fname">First Name</label>
+                  <input type="text" id="fname" class="form-control rounded-0">
+                </div>
+                <div class="col-md-6">
+                  <label class="text-black" for="lname">Last Name</label>
+                  <input type="text" id="lname" class="form-control rounded-0">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="email">Email</label> 
+                  <input type="email" id="email" class="form-control rounded-0">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                
+                <div class="col-md-12">
+                  <label class="text-black" for="subject">Subject</label> 
+                  <input type="subject" id="subject" class="form-control rounded-0">
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <label class="text-black" for="message">Message</label> 
+                  <textarea name="message" id="message" cols="30" rows="7" class="form-control rounded-0" placeholder="Leave your message here..."></textarea>
+                </div>
+              </div>
+
+              <div class="row form-group">
+                <div class="col-md-12">
+                  <input type="submit" value="Send Message" class="btn btn-primary mr-2 mb-2">
+                </div>
+              </div>
+
+  
+            </form>
+          </div>
+        
+        </div>
+        
+      </div>
+    </div>
+
+    <div class="footer py-5 text-center">
+      <div class="container">
+<div class="row">
+		<div style="margin-left: auto;margin-right:auto;">
+			<a href="https://www.instagram.com/shikhar_2525/" target="_blank"><img src="{% static 'eproject/homestatic/images/insta.png' %}" height="50px" width="50px" style="margin:5px"></a>
+			<a href="https://www.linkedin.com/in/shikhar-mandloi-8657b6182/" target="_blank"><img src="{% static 'eproject/homestatic/images/linkedin.png' %}" height="50px" width="50px" style="margin:5px"></a>
+		</div>
+		
+        <div class="col-md-12" style="margin-top: 10px">
+            <p class="mb-0">
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+            </p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .site-wrap -->
+
+  <script src="{% static 'eproject/homestatic/js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'eproject/homestatic/js/jquery-ui.js' %}"></script>
+  <script src="{% static 'eproject/homestatic/js/popper.min.js' %}"></script>
+  <script src="{% static 'eproject/homestatic/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'eproject/homestatic/js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'eproject/homestatic/js/jquery.countdown.min.js' %}"></script>
+  <script src="{% static 'eproject/homestatic/js/bootstrap-datepicker.min.js' %}"></script>
+  <script src="{% static 'eproject/homestatic/js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'eproject/homestatic/js/aos.js' %}"></script>
+  <script src="{% static 'eproject/homestatic/js/jquery.fancybox.min.js' %}"></script>
+  <script src="{% static 'eproject/homestatic/js/jquery.sticky.js' %}"></script>
+
+  
+  <script src="{% static 'eproject/homestatic/js/main.js' %}"></script>
+  
+  </body>
+</html>
